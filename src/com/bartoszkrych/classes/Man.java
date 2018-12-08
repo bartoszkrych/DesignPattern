@@ -1,4 +1,4 @@
-package classes;
+package com.bartoszkrych.classes;
 
 public class Man extends Human {
 

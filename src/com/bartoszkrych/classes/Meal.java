@@ -1,18 +1,18 @@
-package classes;
+package com.bartoszkrych.classes;
 
 
 public class Meal
 {
-    double d_protein;
-    double d_carbohydrates;
-    double d_fat;
-    double d_kcal;
+    private double d_protein;
+    private double d_carbohydrates;
+    private double d_fat;
+    private double d_kcal;
 
-    String s_comment;
+    private String s_comment;
 
-    final int fi_g_fat = 9;
-    final int fi_g_carbo = 4;
-    final int fi_g_protein = 4;
+    private final int fi_g_fat = 9;
+    private final int fi_g_carbo = 4;
+    private final int fi_g_protein = 4;
 
     public Meal(double dProtein, double dCarbohydrates, double dFat)
     {

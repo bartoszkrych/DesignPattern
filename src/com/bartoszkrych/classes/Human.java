@@ -1,4 +1,4 @@
-package classes;
+package com.bartoszkrych.classes;
 
 import java.util.ArrayList;
 
