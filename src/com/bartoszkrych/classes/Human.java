@@ -4,14 +4,15 @@ import java.util.ArrayList;
 
 public abstract class Human
 {
-    private String s_name;
-    private int i_age;
-    private int i_height;
-    private double d_weight;
+    protected String s_name;
+    protected int i_age;
+    protected int i_height;
+    protected double d_weight;
 
-    private ArrayList<Meal> c_meals;
+    protected ArrayList<Meal> c_meals;
 
-    private double d_eaten_kcal;
+    protected double d_eaten_kcal;
+    protected double d_cpm;
 
     public Human(String sName, int iAge, int iHeight, double dWeight)
     {
@@ -21,7 +22,9 @@ public abstract class Human
         this.d_weight = dWeight;
         this.c_meals = new ArrayList<Meal>();
         this.d_eaten_kcal = 0;
+        this.d_cpm=0;
     }
+
 
     public String sGetName()
     {
@@ -49,4 +52,5 @@ public abstract class Human
         c_meals.add(cMeal);
     }
 
+    public abstract double dSetCPM();
 }
