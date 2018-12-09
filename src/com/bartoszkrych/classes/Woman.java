@@ -8,6 +8,6 @@ public class Woman extends Human{
 
     @Override
     public double dSetCPM() {
-        return (655.1 + (9.563 * dGetWeight()) + (1.85 * dGetWeight()) - (4.676 * iGetAge()))*1.6;
+        return (655.1 + (9.563 * dGetWeight()) + (1.85 * iGetHeight()) - (4.676 * iGetAge()))*1.6;
     }
 }

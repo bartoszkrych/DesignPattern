@@ -1,18 +1,24 @@
 package com.bartoszkrych.classes;
 
-import java.util.ArrayList;
+import com.bartoszkrych.interfaces.Observer;
+import com.bartoszkrych.interfaces.Subject;
 
-public abstract class Human
+import java.util.ArrayList;
+import java.util.List;
+
+public abstract class Human implements Subject
 {
-    protected String s_name;
-    protected int i_age;
-    protected int i_height;
-    protected double d_weight;
+    private String s_name;
+    private int i_age;
+    private int i_height;
+    private double d_weight;
 
     protected ArrayList<Meal> c_meals;
 
     protected double d_eaten_kcal;
     protected double d_cpm;
+
+    protected List<Observer> observers;
 
     public Human(String sName, int iAge, int iHeight, double dWeight)
     {
@@ -23,8 +29,8 @@ public abstract class Human
         this.c_meals = new ArrayList<Meal>();
         this.d_eaten_kcal = 0;
         this.d_cpm=0;
+        this.observers = new ArrayList<Observer>();
     }
-
 
     public String sGetName()
     {
@@ -45,6 +51,19 @@ public abstract class Human
     {
         return d_weight;
     }
+
+    public void vAddObserver(Observer obs){
+        observers.add(obs);
+    }
+
+    public void vRemoveObserver(Observer obs){
+        observers.remove(obs);
+    }
+
+    public void vNotifyObserver(){
+        for(Observer obs : observers) obs.update(d_eaten_kcal,d_cpm,c_meals);
+    }
+
 
     public void vAddMeal(Meal cMeal)
     {

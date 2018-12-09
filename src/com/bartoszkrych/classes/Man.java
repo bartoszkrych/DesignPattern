@@ -10,6 +10,6 @@ public class Man extends Human {
 
     @Override
     public double dSetCPM() {
-        return (665 + (13.75 * dGetWeight()) + (5.003 * dGetWeight()) - (6.775 * iGetAge()))*1.6;
+        return (665 + (13.75 * dGetWeight()) + (5.003 * iGetHeight()) - (6.775 * iGetAge()))*1.6;
     }
 }
