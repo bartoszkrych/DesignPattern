@@ -69,6 +69,7 @@ public abstract class Human implements Subject
     {
         d_eaten_kcal+=cMeal.dGetKcal();
         c_meals.add(cMeal);
+        vNotifyObserver();
     }
 
     public abstract double dSetCPM();

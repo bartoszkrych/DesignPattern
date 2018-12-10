@@ -47,6 +47,10 @@ public class Meal
         return d_carbohydrates;
     }
 
+    public double[] dtGetPCFkCal(){
+        return new double[]{d_protein * fi_g_protein, d_carbohydrates * fi_g_carbo, d_fat * fi_g_fat};
+    }
+
     public double dGetFat()
     {
         return d_fat;
