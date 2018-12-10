@@ -27,7 +27,7 @@ public class ObsPercent implements Observer {
         return d_fat_p;
     }
 
-    public double dGetCarbop() {
+    public double dGetCarboP() {
         return d_carbo_p;
     }
 
