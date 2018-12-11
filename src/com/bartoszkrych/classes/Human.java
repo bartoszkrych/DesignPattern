@@ -6,6 +6,8 @@ import com.bartoszkrych.interfaces.Subject;
 import java.util.ArrayList;
 import java.util.List;
 
+import static java.lang.Math.round;
+
 public abstract class Human implements Subject
 {
     private String s_name;
@@ -72,5 +74,13 @@ public abstract class Human implements Subject
         vNotifyObserver();
     }
 
-    public abstract double dSetCPM();
+    public abstract void dSetCPM();
+
+    protected double dRoundDouble(double dNumber)
+    {
+        dNumber *= 100;
+        dNumber = round(dNumber);
+        dNumber /= 100;
+        return dNumber;
+    }
 }

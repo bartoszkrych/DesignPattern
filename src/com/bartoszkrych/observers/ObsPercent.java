@@ -43,12 +43,12 @@ public class ObsPercent implements Observer {
             d_carbo_kcal += aM.dtGetPCFkCal()[2];
         }
 
-        d_protein_p= (round(d_protein_kcal/dKcal*1000));
-        d_fat_p=(round(d_fat_kcal/dKcal*1000));
-        d_carbo_p=round((d_carbo_kcal/dKcal*1000));
-        d_protein_p/=10;
-        d_fat_p/=10;
-        d_carbo_p/=10;
+        d_protein_p= (round(d_protein_kcal/dKcal*10000));
+        d_fat_p=(round(d_fat_kcal/dKcal*10000));
+        d_carbo_p=round((d_carbo_kcal/dKcal*10000));
+        d_protein_p/=100;
+        d_fat_p/=100;
+        d_carbo_p/=100;
 
         System.out.println("P:"+ d_protein_p+"  F:"+d_fat_p+"   C:"+d_carbo_p);
     }
