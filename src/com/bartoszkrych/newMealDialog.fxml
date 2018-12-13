@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<DialogPane
+        xmlns:fx="http://javafx.com/fxml"
+        fx:controller="com.bartoszkrych.DialogController">
+    <headerText>
+        We Could put instruction here
+    </headerText>
+    <content>
+        <GridPane>
+            <Label text="Comment:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+            <TextField fx:id="commentField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+            <Label text="Protein:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+            <TextField fx:id="proteinField" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+            <Label text="Carbohydrate:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+            <TextField fx:id="carboField" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+            <Label text="Fat:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+            <TextField fx:id="fatField" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+        </GridPane>
+    </content>
+</DialogPane>
