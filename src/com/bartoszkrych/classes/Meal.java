@@ -1,6 +1,11 @@
 package com.bartoszkrych.classes;
 
 
+import javafx.beans.property.DoubleProperty;
+import javafx.beans.property.SimpleDoubleProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+
 public class Meal
 {
     private double d_protein;
@@ -14,6 +19,8 @@ public class Meal
     private final int fi_g_carbo = 4;
     private final int fi_g_protein = 4;
 
+
+    private StringProperty sp_comment;
     public Meal(double dProtein, double dCarbohydrates, double dFat)
     {
         this.d_protein = dProtein;
@@ -30,6 +37,10 @@ public class Meal
         this.d_fat = dFat;
         this.s_comment = sComment;
         vSetKcal();
+    }
+
+    public String sGetComment() {
+        return s_comment;
     }
 
     private void vSetKcal()

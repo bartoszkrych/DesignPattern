@@ -39,8 +39,8 @@ public class ObsPercent implements Observer {
         double d_carbo_kcal=0.0;
         for (Meal aM : aMeals) {
             d_protein_kcal += aM.dtGetPCFkCal()[0];
-            d_fat_kcal += aM.dtGetPCFkCal()[1];
-            d_carbo_kcal += aM.dtGetPCFkCal()[2];
+            d_carbo_kcal += aM.dtGetPCFkCal()[1];
+            d_fat_kcal += aM.dtGetPCFkCal()[2];
         }
 
         d_protein_p= (round(d_protein_kcal/dKcal*10000));

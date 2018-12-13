@@ -50,7 +50,6 @@
       <items>
             <TableView  fx:id="mealTableView" prefHeight="200.0" prefWidth="200.0">
               <columns>
-                  <TableColumn fx:id="colNumber" prefWidth="35.0" text="Lp." />
                 <TableColumn fx:id="colComment" prefWidth="95.0" text="Comment" />
                 <TableColumn fx:id="colProtein" prefWidth="59.0" text="Protein" />
                   <TableColumn fx:id="colCarbo" prefWidth="98.0" text="Carbohydrates" />

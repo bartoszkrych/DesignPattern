@@ -5,17 +5,19 @@ import com.bartoszkrych.classes.Man;
 import com.bartoszkrych.classes.Meal;
 import com.bartoszkrych.observers.ObsOpinion;
 import com.bartoszkrych.observers.ObsPercent;
+import javafx.beans.property.SimpleDoubleProperty;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.Dialog;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
+import javafx.util.Callback;
 
 import java.io.IOException;
 import java.time.Period;
@@ -26,6 +28,12 @@ public class Controller {
     private Human client;
     private ObsOpinion obsOpinion= new ObsOpinion();
     private ObsPercent obsPercent= new ObsPercent();
+
+    public TableColumn<Meal,String> colComment;
+    public TableColumn<Meal,Double> colProtein;
+    public TableColumn<Meal,Double> colCarbo;
+    public TableColumn<Meal,Double> colFat;
+    public TableColumn<Meal,Double> colKcal;
 
     public Label yourHeight;
     public Label yourAge;
@@ -54,9 +62,9 @@ public class Controller {
         client.vAddObserver(obsOpinion);
         client.vAddObserver(obsPercent);
 
-        client.vAddMeal(new Meal(15,90,20));
-        client.vAddMeal(new Meal(100,50,30));
-        client.vAddMeal(new Meal(20,80,20));
+        client.vAddMeal(new Meal(15.7,91.2,20.2,"Dinner"));
+        client.vAddMeal(new Meal(99.9,52.4,30.7,"breakfast"));
+        client.vAddMeal(new Meal(20.1,80.2,29.9,"After training"));
 
 
         yourName.setText(client.sGetName());
@@ -65,13 +73,48 @@ public class Controller {
         yourAge.setText(""+client.iGetAge());
         yourCPM.setText(""+client.dGetCPM());
 
-        yourEatenKcal.setText(""+client.dGetEatenKcal());
+        //colComment.setCellValueFactory(new PropertyValueFactory<>("sp_comment"));
+        colComment.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<Meal, String>, ObservableValue<String>>() {
+            @Override
+            public ObservableValue<String> call(TableColumn.CellDataFeatures<Meal, String> param) {
+                return new SimpleStringProperty(param.getValue().sGetComment());
+            }
+        });
+        colCarbo.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<Meal, Double>, ObservableValue<Double>>() {
+            @Override
+            public ObservableValue<Double> call(TableColumn.CellDataFeatures<Meal, Double> param) {
+                return new SimpleDoubleProperty(param.getValue().dGetCarbohydrates()).asObject();
+            }
+        });
+        colFat.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<Meal, Double>, ObservableValue<Double>>() {
+            @Override
+            public ObservableValue<Double> call(TableColumn.CellDataFeatures<Meal, Double> param) {
+                return new SimpleDoubleProperty(param.getValue().dGetFat()).asObject();
+            }
+        });
+        colProtein.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<Meal, Double>, ObservableValue<Double>>() {
+            @Override
+            public ObservableValue<Double> call(TableColumn.CellDataFeatures<Meal, Double> param) {
+                return new SimpleDoubleProperty(param.getValue().dGetProtein()).asObject();
+            }
+        });
+        colKcal.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<Meal, Double>, ObservableValue<Double>>() {
+            @Override
+            public ObservableValue<Double> call(TableColumn.CellDataFeatures<Meal, Double> param) {
+                return new SimpleDoubleProperty(param.getValue().dGetKcal()).asObject();
+            }
+        });
 
-        proteinPercent.setText(obsPercent.dGetProteinP()+"%");
-        fatPercent.setText(obsPercent.dGetFatP()+"%");
-        carboPercent.setText(obsPercent.dGetCarboP()+"%");
-        commentObs.setText(obsOpinion.sGetComment());
 
+        data = FXCollections.observableArrayList(client.getMeals());
+
+
+        mealTableView.setItems(data);
+
+        updata();
+
+        //mealTableView = mealTableView.getItems();
+        /*
         mealTableView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Meal>() {
             @Override
             public void changed(ObservableValue<? extends Meal> observable, Meal oldValue, Meal newValue) {
@@ -80,7 +123,7 @@ public class Controller {
 
                 }
             }
-        });
+        });*/
 
         mealTableView.getItems().setAll(client.getMeals());
 
@@ -111,10 +154,22 @@ public class Controller {
             Meal newItem = controller.processResult();
 
             client.vAddMeal(newItem);
-
+            data = mealTableView.getItems();
+            data.add(newItem);
+            updata();
             //todoListView.getItems().setAll(TodoData.getInstance().getTodoItems());
             //          todoListView.getSelectionModel().select(newItem);
         }
+    }
+
+
+    private void updata(){
+        yourEatenKcal.setText(""+client.dGetEatenKcal());
+
+        proteinPercent.setText(obsPercent.dGetProteinP()+"%");
+        fatPercent.setText(obsPercent.dGetFatP()+"%");
+        carboPercent.setText(obsPercent.dGetCarboP()+"%");
+        commentObs.setText(obsOpinion.sGetComment());
     }
 
 }
