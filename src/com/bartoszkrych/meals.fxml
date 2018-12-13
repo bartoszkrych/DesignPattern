@@ -48,14 +48,14 @@
       </HBox>
     <SplitPane dividerPositions="0.5" focusTraversable="true" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
       <items>
-            <TableView prefHeight="200.0" prefWidth="200.0">
+            <TableView  fx:id="mealTableView" prefHeight="200.0" prefWidth="200.0">
               <columns>
-                  <TableColumn fx:id="numberMeal" prefWidth="35.0" text="Lp." />
-                <TableColumn fx:id="commentMeal" prefWidth="95.0" text="Comment" />
-                <TableColumn fx:id="proteinMeal" prefWidth="59.0" text="Protein" />
-                  <TableColumn fx:id="carboMeal" prefWidth="98.0" text="Carbohydrates" />
-                  <TableColumn fx:id="fatMeal" prefWidth="51.0" text="Fat" />
-                  <TableColumn fx:id="kcalMeal" prefWidth="108.0" text="kcal" />
+                  <TableColumn fx:id="colNumber" prefWidth="35.0" text="Lp." />
+                <TableColumn fx:id="colComment" prefWidth="95.0" text="Comment" />
+                <TableColumn fx:id="colProtein" prefWidth="59.0" text="Protein" />
+                  <TableColumn fx:id="colCarbo" prefWidth="98.0" text="Carbohydrates" />
+                  <TableColumn fx:id="colFat" prefWidth="51.0" text="Fat" />
+                  <TableColumn fx:id="colKcal" prefWidth="108.0" text="kcal" />
               </columns>
             </TableView>
         <AnchorPane>
@@ -165,7 +165,7 @@
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <Label fx:id="commentObs" prefHeight="27.0" prefWidth="116.0" text="&lt;comment&gt;" GridPane.columnIndex="1">
+                        <Label fx:id="commentObs" prefHeight="27.0" prefWidth="230.0" text="&lt;comment&gt;" GridPane.columnIndex="1">
                            <font>
                               <Font size="18.0" />
                            </font>

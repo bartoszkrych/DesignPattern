@@ -18,14 +18,14 @@ public class Main extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("meals.fxml"));
 
         primaryStage.setTitle("Hello World");
-        primaryStage.setScene(new Scene(root, 300, 275));
+        primaryStage.setScene(new Scene(root, 875, 550));
         primaryStage.show();
     }
 
 //public class Main {
     public static void main(String[] args) {
         launch(args);
-
+/*
         Human c_man = new Man("Jan",22,183,88.2);
         c_man.vAddObserver(new ObsOpinion());
         c_man.vAddObserver(new ObsPercent());
@@ -33,5 +33,7 @@ public class Main extends Application {
         c_man.vAddMeal(new Meal(100,50,30));
         c_man.vAddMeal(new Meal(20,80,20));
         c_man.vAddMeal(new Meal(100,80,0));
+*/
+
     }
 }

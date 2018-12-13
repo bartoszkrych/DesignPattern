@@ -54,6 +54,18 @@ public abstract class Human implements Subject
         return d_weight;
     }
 
+    public ArrayList<Meal> getMeals() {
+        return c_meals;
+    }
+
+    public double dGetCPM() {
+        return d_cpm;
+    }
+
+    public double dGetEatenKcal() {
+        return d_eaten_kcal;
+    }
+
     public void vAddObserver(Observer obs){
         observers.add(obs);
     }

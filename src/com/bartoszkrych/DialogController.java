@@ -2,6 +2,7 @@ package com.bartoszkrych;
 
 import com.bartoszkrych.classes.Meal;
 import javafx.fxml.FXML;
+import javafx.scene.control.Spinner;
 import javafx.scene.control.TextField;
 
 
@@ -10,28 +11,19 @@ public class DialogController {
     @FXML
     private TextField  commentField;
     @FXML
-    private TextField  proteinField;
+    private Spinner<Integer> proteinField;
     @FXML
-    private TextField  carboField;
+    private Spinner<Integer> carboField;
     @FXML
-    private TextField  fatField;
+    private Spinner<Integer>  fatField;
 
     public Meal processResult(){
         String comment = commentField.getText().trim();
-        double protein = fromString(proteinField.getText().trim());
-        double carbo = fromString(carboField.getText().trim());
-        double fat = fromString(fatField.getText().trim());
+        int protein = proteinField.getValue().intValue();
+        int carbo = carboField.getValue().intValue();
+        int fat = fatField.getValue().intValue();
 
         Meal newItem = new Meal(protein,carbo,fat,comment);
         return newItem;
-    }
-
-
-    private Double fromString(String s) {
-        if (s.isEmpty() || "-".equals(s) || ".".equals(s) || "-.".equals(s)) {
-            return 0.0 ;
-        } else {
-            return Double.valueOf(s);
-        }
     }
 }
