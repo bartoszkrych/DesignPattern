@@ -7,20 +7,16 @@ import com.bartoszkrych.observers.ObsOpinion;
 import com.bartoszkrych.observers.ObsPercent;
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.*;
-import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.util.Callback;
 
 import java.io.IOException;
-import java.time.Period;
 import java.util.Optional;
 
 public class Controller {
@@ -73,7 +69,6 @@ public class Controller {
         yourAge.setText(""+client.iGetAge());
         yourCPM.setText(""+client.dGetCPM());
 
-        //colComment.setCellValueFactory(new PropertyValueFactory<>("sp_comment"));
         colComment.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<Meal, String>, ObservableValue<String>>() {
             @Override
             public ObservableValue<String> call(TableColumn.CellDataFeatures<Meal, String> param) {

@@ -1,10 +1,6 @@
 package com.bartoszkrych;
 
-import com.bartoszkrych.classes.Human;
-import com.bartoszkrych.classes.Man;
-import com.bartoszkrych.classes.Meal;
-import com.bartoszkrych.observers.ObsOpinion;
-import com.bartoszkrych.observers.ObsPercent;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;

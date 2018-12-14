@@ -19,8 +19,6 @@ public class Meal
     private final int fi_g_carbo = 4;
     private final int fi_g_protein = 4;
 
-
-    private StringProperty sp_comment;
     public Meal(double dProtein, double dCarbohydrates, double dFat)
     {
         this.d_protein = dProtein;

@@ -9,9 +9,9 @@ import static java.lang.Math.round;
 
 public class ObsPercent implements Observer {
 
-    double d_protein_p=0.0;
-    double d_fat_p=0.0;
-    double d_carbo_p=0.0;
+    private double d_protein_p=0.0;
+    private double d_fat_p=0.0;
+    private double d_carbo_p=0.0;
 
     public ObsPercent() {
         this.d_protein_p = 0;
