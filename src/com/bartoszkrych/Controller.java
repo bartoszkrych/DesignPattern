@@ -31,6 +31,15 @@ public class Controller {
     public TableColumn<Meal,Double> colFat;
     public TableColumn<Meal,Double> colKcal;
 
+    @FXML
+    private TextField  commentField;
+    @FXML
+    private TextField proteinField;
+    @FXML
+    private TextField carboField;
+    @FXML
+    private TextField  fatField;
+
     public Label yourHeight;
     public Label yourAge;
     public Label yourName;
@@ -100,9 +109,7 @@ public class Controller {
             }
         });
 
-
         data = FXCollections.observableArrayList(client.getMeals());
-
 
         mealTableView.setItems(data);
 
@@ -124,6 +131,69 @@ public class Controller {
 
     }
 
+    @FXML
+    public void addMealClick(){
+
+        String comment = commentField.getText().trim();
+        double protein=0;
+        double carbo=0;
+        double fat=0;
+
+
+        boolean valid = true;
+        try {
+            protein = Double.parseDouble(proteinField.getText());
+            proteinField.setStyle(null);
+        } catch (NumberFormatException ex) {
+            valid = false;
+            proteinField.setStyle("-fx-control-inner-background: rgba(229,0,0,0.84);");
+        }
+
+        try {
+            carbo = Double.parseDouble(carboField.getText());
+            carboField.setStyle(null);
+        } catch (NumberFormatException ex) {
+            valid = false;
+            carboField.setStyle("-fx-control-inner-background: rgba(229,0,0,0.84);");
+        }
+
+        try {
+            fat = Double.parseDouble(fatField.getText());
+            fatField.setStyle(null);
+        } catch (NumberFormatException ex) {
+            valid = false;
+            fatField.setStyle("-fx-control-inner-background: rgba(229,0,0,0.84);");
+        }
+
+            if (valid) {
+                System.out.println("successfully submitted ");
+
+                Meal newItem = new Meal(protein,carbo,fat,comment);
+                client.vAddMeal(newItem);
+                data = mealTableView.getItems();
+                data.add(newItem);
+                updata();
+            }
+
+    }
+
+
+    private void updata(){
+        yourEatenKcal.setText(""+client.dGetEatenKcal());
+
+        proteinPercent.setText(obsPercent.dGetProteinP()+"%");
+        fatPercent.setText(obsPercent.dGetFatP()+"%");
+        carboPercent.setText(obsPercent.dGetCarboP()+"%");
+        commentObs.setText(obsOpinion.sGetComment());
+    }
+
+
+}
+
+
+
+
+/*
     @FXML
     public void showNewMealDialog(){
         Dialog<ButtonType> dialog = new Dialog<>();
@@ -156,15 +226,4 @@ public class Controller {
             //          todoListView.getSelectionModel().select(newItem);
         }
     }
-
-
-    private void updata(){
-        yourEatenKcal.setText(""+client.dGetEatenKcal());
-
-        proteinPercent.setText(obsPercent.dGetProteinP()+"%");
-        fatPercent.setText(obsPercent.dGetFatP()+"%");
-        carboPercent.setText(obsPercent.dGetCarboP()+"%");
-        commentObs.setText(obsOpinion.sGetComment());
-    }
-
-}
+*/
