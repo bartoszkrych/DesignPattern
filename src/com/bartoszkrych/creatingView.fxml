@@ -51,8 +51,8 @@
         <RadioButton fx:id="sexMan" selected="true" text="Man" />
         <RadioButton fx:id="sexWoman" text="Woman" />
     </VBox>
-    <Button onAction="#createHuman" text="Create" GridPane.columnIndex="2" GridPane.rowIndex="5" />
-   <Button text="Exit" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+    <Button onAction="#createHumanClick" text="Create" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+   <Button onAction="#exitButtonClick" text="Exit" GridPane.columnIndex="2" GridPane.rowIndex="6" />
    <columnConstraints>
       <ColumnConstraints />
       <ColumnConstraints />

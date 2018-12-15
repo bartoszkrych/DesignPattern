@@ -3,10 +3,12 @@ package com.bartoszkrych;
 import com.bartoszkrych.classes.Human;
 import com.bartoszkrych.classes.Man;
 import com.bartoszkrych.classes.Woman;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 
@@ -32,7 +34,7 @@ public class firstController {
         sexWoman.setToggleGroup(sexGroup);
     }
 
-    public void createHuman() throws IOException {
+    public void createHumanClick() throws IOException {
         String s_name = setName.getText().trim();
         int i_age = 0;
         int i_height = 0;
@@ -73,5 +75,10 @@ public class firstController {
             }
             Main.showClientView(client);
         }
+    }
+
+    public void exitButtonClick() {
+        Stage stage = (Stage) setName.getScene().getWindow();
+        stage.close();
     }
 }
