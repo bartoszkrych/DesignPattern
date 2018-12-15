@@ -2,7 +2,6 @@ package com.bartoszkrych;
 
 
 import com.bartoszkrych.classes.Human;
-import com.bartoszkrych.classes.Man;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -18,16 +17,12 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
 
-        this.primaryStage = primaryStage;
+        Main.primaryStage = primaryStage;
 
-        Human c_man = new Man("Jan",22,183,88.2);
-        showClientView(c_man);
-
-
-        //showCreatingView();
+        showCreatingView();
     }
 
-    public static void showCreatingView() throws IOException{
+    private static void showCreatingView() throws IOException{
 
 
         FXMLLoader loader = new FXMLLoader();
@@ -39,7 +34,7 @@ public class Main extends Application {
         primaryStage.show();
     }
 
-    public static void showClientView(Human client) throws IOException{
+    static void showClientView(Human client) throws IOException{
 
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(Main.class.getResource("clientView.fxml"));
@@ -54,15 +49,5 @@ public class Main extends Application {
 
     public static void main(String[] args) {
         launch(args);
-/*
-        Human c_man = new Man("Jan",22,183,88.2);
-        c_man.vAddObserver(new ObsOpinion());
-        c_man.vAddObserver(new ObsPercent());
-        c_man.vAddMeal(new Meal(15,90,20));
-        c_man.vAddMeal(new Meal(100,50,30));
-        c_man.vAddMeal(new Meal(20,80,20));
-        c_man.vAddMeal(new Meal(100,80,0));
-*/
-
     }
 }

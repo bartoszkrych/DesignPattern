@@ -3,31 +3,28 @@ package com.bartoszkrych;
 import com.bartoszkrych.classes.Human;
 import com.bartoszkrych.classes.Man;
 import com.bartoszkrych.classes.Woman;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
+import javafx.fxml.FXML;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
-import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.time.LocalDate;
 
 public class firstController {
 
-    private Main main;
+    @FXML
+    private RadioButton sexMan;
+    @FXML
+    private RadioButton sexWoman;
 
-
-    public RadioButton sexMan;
-    public RadioButton sexWoman;
-    private Human client;
-
-
-    public TextField setName;
-    public TextField setAge;
-    public TextField setHeight;
-    public TextField setWeight;
+    @FXML
+    private TextField setName;
+    @FXML
+    private TextField setAge;
+    @FXML
+    private TextField setHeight;
+    @FXML
+    private TextField setWeight;
 
     public void initialize(){
         ToggleGroup sexGroup = new ToggleGroup();
@@ -36,7 +33,6 @@ public class firstController {
     }
 
     public void createHuman() throws IOException {
-
         String s_name = setName.getText().trim();
         int i_age = 0;
         int i_height = 0;
@@ -69,12 +65,13 @@ public class firstController {
         }
 
         if(valid){
+            Human client;
             if(sexMan.isSelected()){
                 client = new Man (s_name,i_age,i_height,d_weight);
             }else{
                 client = new Woman(s_name,i_age,i_height,d_weight);
             }
-            main.showClientView(client);
+            Main.showClientView(client);
         }
     }
 }

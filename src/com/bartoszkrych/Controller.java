@@ -9,7 +9,6 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.util.Callback;
@@ -155,9 +154,7 @@ public class Controller {
 
     }
 
-
-
-    public void setClient(Human cClient){
+    void setClient(Human cClient){
         client=cClient;
 
         client.vAddObserver(obsOpinion);
@@ -179,7 +176,7 @@ public class Controller {
         updata();
     }
 
-    public void deleteMealClick(ActionEvent actionEvent) {
+    public void deleteMealClick() {
         if(!mealsComboBox.getSelectionModel().isEmpty()){
             if(client.bDeleteMeal(mealsComboBox.getSelectionModel().getSelectedItem().toString())){
                 data = FXCollections.observableArrayList(client.getMeals());
@@ -207,41 +204,3 @@ public class Controller {
 
     }
 }
-
-
-
-
-/*
-    @FXML
-    public void showNewMealDialog(){
-        Dialog<ButtonType> dialog = new Dialog<>();
-        dialog.initOwner(mainVBox.getScene().getWindow());
-        dialog.setTitle("Add new Meal");
-        dialog.setHeaderText("Use this dialog to add a new meal");
-        FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(getClass().getResource("_________.fxml"));
-        try{
-            dialog.getDialogPane().setContent(fxmlLoader.load());
-        } catch(IOException e){
-            System.out.println("Couldnt load the dialog");
-            e.printStackTrace();
-            return;
-        }
-
-        dialog.getDialogPane().getButtonTypes().add(ButtonType.OK);
-        dialog.getDialogPane().getButtonTypes().add(ButtonType.CANCEL);
-
-        Optional<ButtonType> result = dialog.showAndWait();
-        if(result.isPresent() && result.get() == ButtonType.OK) {
-            DialogController controller = fxmlLoader.getController();
-            Meal newItem = controller.processResult();
-
-            client.vAddMeal(newItem);
-            data = mealTableView.getItems();
-            data.add(newItem);
-            updata();
-            //todoListView.getItems().setAll(TodoData.getInstance().getTodoItems());
-            //          todoListView.getSelectionModel().select(newItem);
-        }
-    }
-*/

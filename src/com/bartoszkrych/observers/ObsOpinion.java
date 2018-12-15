@@ -6,7 +6,7 @@ import com.bartoszkrych.interfaces.Observer;
 import java.util.ArrayList;
 
 public class ObsOpinion implements Observer {
-    String s_comment;
+    private String s_comment;
 
     public ObsOpinion() {
         this.s_comment = "";

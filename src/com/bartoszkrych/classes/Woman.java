@@ -9,7 +9,7 @@ public class Woman extends Human{
 
     @Override
     public void dSetCPM() {
-        d_cpm =(655.1 + (9.563 * dGetWeight()) + (1.85 * iGetHeight()) - (4.676 * iGetAge()));
+        d_cpm =(655.1 + (9.563 * dGetWeight()) + (1.85 * iGetHeight()) - (4.676 * iGetAge()))*1.4;
         d_cpm = dRoundDouble(d_cpm);
     }
 }
