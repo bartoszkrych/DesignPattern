@@ -78,7 +78,6 @@ public abstract class Human implements Subject
         for(Observer obs : observers) obs.update(d_eaten_kcal,d_cpm,c_meals);
     }
 
-
     public void vAddMeal(Meal cMeal)
     {
         d_eaten_kcal+=cMeal.dGetKcal();

@@ -9,7 +9,6 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
@@ -107,6 +106,28 @@ public class Controller {
 
     }
 
+    void setClient(Human cClient){
+        client=cClient;
+
+        client.vAddObserver(obsOpinion);
+        client.vAddObserver(obsPercent);
+
+        yourName.setText(client.sGetName());
+        yourWeight.setText(""+client.dGetWeight());
+        yourHeight.setText(""+client.iGetHeight());
+        yourAge.setText(""+client.iGetAge());
+        yourCPM.setText(""+client.dGetCPM());
+
+
+        data = FXCollections.observableArrayList(client.getMeals());
+        mealTableView.setItems(data);
+        mealTableView.getItems().setAll(client.getMeals());
+
+        updataComboBox();
+
+        updata();
+    }
+
     @FXML
     public void addMealClick(){
 
@@ -141,41 +162,19 @@ public class Controller {
             fatField.setStyle("-fx-control-inner-background: rgba(229,0,0,0.4);");
         }
 
-            if (valid) {
-                commentField.setText("");
-                fatField.setText("");
-                proteinField.setText("");
-                carboField.setText("");
-                Meal newItem = new Meal(protein,carbo,fat,comment);
-                client.vAddMeal(newItem);
-                data = mealTableView.getItems();
-                data.add(newItem);
-                mealsComboBox.getItems().add(newItem.sGetComment());
-                updata();
-            }
+        if (valid) {
+            commentField.setText("");
+            fatField.setText("");
+            proteinField.setText("");
+            carboField.setText("");
+            Meal newItem = new Meal(protein,carbo,fat,comment);
+            client.vAddMeal(newItem);
+            data = mealTableView.getItems();
+            data.add(newItem);
+            mealsComboBox.getItems().add(newItem.sGetComment());
+            updata();
+        }
 
-    }
-
-    void setClient(Human cClient){
-        client=cClient;
-
-        client.vAddObserver(obsOpinion);
-        client.vAddObserver(obsPercent);
-
-        yourName.setText(client.sGetName());
-        yourWeight.setText(""+client.dGetWeight());
-        yourHeight.setText(""+client.iGetHeight());
-        yourAge.setText(""+client.iGetAge());
-        yourCPM.setText(""+client.dGetCPM());
-
-
-        data = FXCollections.observableArrayList(client.getMeals());
-        mealTableView.setItems(data);
-        mealTableView.getItems().setAll(client.getMeals());
-
-        updataComboBox();
-
-        updata();
     }
 
     public void deleteMealClick() {
@@ -188,6 +187,11 @@ public class Controller {
             }
         }
 
+    }
+
+    public void exitButtonClick() {
+        Stage stage = (Stage) yourName.getScene().getWindow();
+        stage.close();
     }
 
     private void updata(){
@@ -204,10 +208,5 @@ public class Controller {
             mealsComboBox.getItems().add(aData.sGetComment());
         }
 
-    }
-
-    public void exitButtonClick() {
-        Stage stage = (Stage) yourName.getScene().getWindow();
-        stage.close();
     }
 }

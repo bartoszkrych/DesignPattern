@@ -22,8 +22,6 @@ public class ObsOpinion implements Observer {
         else if(d_kcal<-100 && d_kcal>=-300) s_comment = "Grow thin ;-)";
         else if(d_kcal<-300) s_comment = "Sooo bad! Eat more today!";
         else s_comment="Perfect!";
-
-        System.out.println( dCPM+"/"+dKcal+"    "+s_comment);
     }
 
     public String sGetComment() {

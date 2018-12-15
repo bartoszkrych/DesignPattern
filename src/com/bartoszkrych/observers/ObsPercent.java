@@ -49,7 +49,5 @@ public class ObsPercent implements Observer {
         d_protein_p/=100;
         d_fat_p/=100;
         d_carbo_p/=100;
-
-        System.out.println("P:"+ d_protein_p+"  F:"+d_fat_p+"   C:"+d_carbo_p);
     }
 }
