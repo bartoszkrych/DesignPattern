@@ -16,6 +16,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
+<?import javafx.scene.control.ComboBox?>
 <VBox fx:id="mainVBox" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bartoszkrych.Controller">
   <children>
     <SplitPane dividerPositions="0.5" focusTraversable="true" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
@@ -206,11 +207,11 @@
          </padding></HBox>
       <HBox layoutX="10.0" layoutY="582.0" prefHeight="28.0" prefWidth="900.0">
          <children>
-            <ChoiceBox fx:id="mealsChoiceBox" prefWidth="150.0">
+            <ComboBox fx:id="mealsComboBox" prefWidth="150.0">
                <HBox.margin>
                   <Insets left="10.0" right="20.0" />
                </HBox.margin>
-            </ChoiceBox>
+            </ComboBox>
             <Button fx:id="deleteMealButton" mnemonicParsing="false" onAction="#deleteMealClick" text="Delete">
                <HBox.margin>
                   <Insets left="10.0" />

@@ -2,9 +2,9 @@ package com.bartoszkrych;
 
 
 import com.bartoszkrych.classes.Human;
+import com.bartoszkrych.classes.Man;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -19,7 +19,12 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
 
         this.primaryStage = primaryStage;
-        showCreatingView();
+
+        Human c_man = new Man("Jan",22,183,88.2);
+        showClientView(c_man);
+
+
+        //showCreatingView();
     }
 
     public static void showCreatingView() throws IOException{

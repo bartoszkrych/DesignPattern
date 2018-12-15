@@ -1,7 +1,6 @@
 package com.bartoszkrych;
 
 import com.bartoszkrych.classes.Human;
-import com.bartoszkrych.classes.Man;
 import com.bartoszkrych.classes.Meal;
 import com.bartoszkrych.observers.ObsOpinion;
 import com.bartoszkrych.observers.ObsPercent;
@@ -12,13 +11,8 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.control.*;
-import javafx.scene.layout.VBox;
 import javafx.util.Callback;
-
-import java.io.IOException;
-import java.util.Optional;
 
 public class Controller {
 
@@ -26,11 +20,19 @@ public class Controller {
     private ObsOpinion obsOpinion= new ObsOpinion();
     private ObsPercent obsPercent= new ObsPercent();
 
-    public TableColumn<Meal,String> colComment;
-    public TableColumn<Meal,Double> colProtein;
-    public TableColumn<Meal,Double> colCarbo;
-    public TableColumn<Meal,Double> colFat;
-    public TableColumn<Meal,Double> colKcal;
+    @FXML
+    private ComboBox mealsComboBox;
+
+    @FXML
+    private TableColumn<Meal,String> colComment;
+    @FXML
+    private TableColumn<Meal,Double> colProtein;
+    @FXML
+    private TableColumn<Meal,Double> colCarbo;
+    @FXML
+    private TableColumn<Meal,Double> colFat;
+    @FXML
+    private TableColumn<Meal,Double> colKcal;
 
     @FXML
     private TextField  commentField;
@@ -40,28 +42,31 @@ public class Controller {
     private TextField carboField;
     @FXML
     private TextField  fatField;
-
-    public Label yourHeight;
-    public Label yourAge;
-    public Label yourName;
-    public Label yourCPM;
-    public Label yourEatenKcal;
-    public Label commentObs;
-    public Label proteinPercent;
-    public Label carboPercent;
-    public Label fatPercent;
-
     @FXML
-    public Label yourWeight;
-
+    private Label yourHeight;
+    @FXML
+    private Label yourAge;
+    @FXML
+    private Label yourName;
+    @FXML
+    private Label yourCPM;
+    @FXML
+    private Label yourEatenKcal;
+    @FXML
+    private Label commentObs;
+    @FXML
+    private Label proteinPercent;
+    @FXML
+    private Label carboPercent;
+    @FXML
+    private Label fatPercent;
+    @FXML
+    private Label yourWeight;
     @FXML
     private TableView<Meal> mealTableView;
 
-    @FXML
     private ObservableList<Meal> data;
 
-    @FXML
-    private VBox mainVBox;
 
     public void initialize(){
 
@@ -144,20 +149,12 @@ public class Controller {
                 client.vAddMeal(newItem);
                 data = mealTableView.getItems();
                 data.add(newItem);
+                mealsComboBox.getItems().add(newItem.sGetComment());
                 updata();
             }
 
     }
 
-
-    private void updata(){
-        yourEatenKcal.setText(""+client.dGetEatenKcal());
-
-        proteinPercent.setText(obsPercent.dGetProteinP()+"%");
-        fatPercent.setText(obsPercent.dGetFatP()+"%");
-        carboPercent.setText(obsPercent.dGetCarboP()+"%");
-        commentObs.setText(obsOpinion.sGetComment());
-    }
 
 
     public void setClient(Human cClient){
@@ -174,15 +171,40 @@ public class Controller {
 
 
         data = FXCollections.observableArrayList(client.getMeals());
-
         mealTableView.setItems(data);
-
         mealTableView.getItems().setAll(client.getMeals());
+
+        updataComboBox();
 
         updata();
     }
 
     public void deleteMealClick(ActionEvent actionEvent) {
+        if(!mealsComboBox.getSelectionModel().isEmpty()){
+            if(client.bDeleteMeal(mealsComboBox.getSelectionModel().getSelectedItem().toString())){
+                data = FXCollections.observableArrayList(client.getMeals());
+                mealTableView.setItems(data);
+                updata();
+                updataComboBox();
+            }
+        }
+
+    }
+
+    private void updata(){
+        yourEatenKcal.setText(""+client.dGetEatenKcal());
+
+        proteinPercent.setText(obsPercent.dGetProteinP()+"%");
+        fatPercent.setText(obsPercent.dGetFatP()+"%");
+        carboPercent.setText(obsPercent.dGetCarboP()+"%");
+        commentObs.setText(obsOpinion.sGetComment());
+    }
+    private void updataComboBox(){
+        mealsComboBox.getItems().clear();
+        for (Meal aData : data) {
+            mealsComboBox.getItems().add(aData.sGetComment());
+        }
+
     }
 }
 

@@ -86,6 +86,18 @@ public abstract class Human implements Subject
         vNotifyObserver();
     }
 
+    public boolean bDeleteMeal(String sComment){
+        for(int i = 0; i < c_meals.size(); i++){
+            if(c_meals.get(i).sGetComment().equals(sComment)){
+                d_eaten_kcal-= c_meals.get(i).dGetKcal();
+                c_meals.remove(i);
+                vNotifyObserver();
+                return true;
+            }
+        }
+        return false;
+    }
+
     public abstract void dSetCPM();
 
     protected double dRoundDouble(double dNumber)
