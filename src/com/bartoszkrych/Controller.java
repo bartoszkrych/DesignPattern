@@ -10,6 +10,7 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.*;
@@ -63,20 +64,9 @@ public class Controller {
     private VBox mainVBox;
 
     public void initialize(){
-        client = new Man("Jan",22,183,88.2);
-        client.vAddObserver(obsOpinion);
-        client.vAddObserver(obsPercent);
 
-        client.vAddMeal(new Meal(15.7,91.2,20.2,"Dinner"));
-        client.vAddMeal(new Meal(99.9,52.4,30.7,"breakfast"));
-        client.vAddMeal(new Meal(20.1,80.2,29.9,"After training"));
-
-
-        yourName.setText(client.sGetName());
-        yourWeight.setText(""+client.dGetWeight());
-        yourHeight.setText(""+client.iGetHeight());
-        yourAge.setText(""+client.iGetAge());
-        yourCPM.setText(""+client.dGetCPM());
+        obsOpinion = new ObsOpinion();
+        obsPercent = new ObsPercent();
 
         colComment.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<Meal, String>, ObservableValue<String>>() {
             @Override
@@ -109,26 +99,6 @@ public class Controller {
             }
         });
 
-        data = FXCollections.observableArrayList(client.getMeals());
-
-        mealTableView.setItems(data);
-
-        updata();
-
-        //mealTableView = mealTableView.getItems();
-        /*
-        mealTableView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Meal>() {
-            @Override
-            public void changed(ObservableValue<? extends Meal> observable, Meal oldValue, Meal newValue) {
-                if(newValue!= null){
-                    Meal meal = mealTableView.getSelectionModel().getSelectedItem();
-
-                }
-            }
-        });*/
-
-        mealTableView.getItems().setAll(client.getMeals());
-
     }
 
     @FXML
@@ -142,32 +112,34 @@ public class Controller {
 
         boolean valid = true;
         try {
-            protein = Double.parseDouble(proteinField.getText());
+            protein = Double.parseDouble(proteinField.getText().trim());
             proteinField.setStyle(null);
         } catch (NumberFormatException ex) {
             valid = false;
-            proteinField.setStyle("-fx-control-inner-background: rgba(229,0,0,0.84);");
+            proteinField.setStyle("-fx-control-inner-background: rgba(229,0,0,0.4);");
         }
 
         try {
-            carbo = Double.parseDouble(carboField.getText());
+            carbo = Double.parseDouble(carboField.getText().trim());
             carboField.setStyle(null);
         } catch (NumberFormatException ex) {
             valid = false;
-            carboField.setStyle("-fx-control-inner-background: rgba(229,0,0,0.84);");
+            carboField.setStyle("-fx-control-inner-background: rgba(229,0,0,0.4);");
         }
 
         try {
-            fat = Double.parseDouble(fatField.getText());
+            fat = Double.parseDouble(fatField.getText().trim());
             fatField.setStyle(null);
         } catch (NumberFormatException ex) {
             valid = false;
-            fatField.setStyle("-fx-control-inner-background: rgba(229,0,0,0.84);");
+            fatField.setStyle("-fx-control-inner-background: rgba(229,0,0,0.4);");
         }
 
             if (valid) {
-                System.out.println("successfully submitted ");
-
+                commentField.setText("");
+                fatField.setText("");
+                proteinField.setText("");
+                carboField.setText("");
                 Meal newItem = new Meal(protein,carbo,fat,comment);
                 client.vAddMeal(newItem);
                 data = mealTableView.getItems();
@@ -188,6 +160,30 @@ public class Controller {
     }
 
 
+    public void setClient(Human cClient){
+        client=cClient;
+
+        client.vAddObserver(obsOpinion);
+        client.vAddObserver(obsPercent);
+
+        yourName.setText(client.sGetName());
+        yourWeight.setText(""+client.dGetWeight());
+        yourHeight.setText(""+client.iGetHeight());
+        yourAge.setText(""+client.iGetAge());
+        yourCPM.setText(""+client.dGetCPM());
+
+
+        data = FXCollections.observableArrayList(client.getMeals());
+
+        mealTableView.setItems(data);
+
+        mealTableView.getItems().setAll(client.getMeals());
+
+        updata();
+    }
+
+    public void deleteMealClick(ActionEvent actionEvent) {
+    }
 }
 
 
@@ -201,7 +197,7 @@ public class Controller {
         dialog.setTitle("Add new Meal");
         dialog.setHeaderText("Use this dialog to add a new meal");
         FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(getClass().getResource("newMealDialog.fxml"));
+        fxmlLoader.setLocation(getClass().getResource("_________.fxml"));
         try{
             dialog.getDialogPane().setContent(fxmlLoader.load());
         } catch(IOException e){

@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="new meals window">
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="validation for new meal">
+      <change afterPath="$PROJECT_DIR$/src/com/bartoszkrych/creatingView.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/bartoszkrych/firstController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/bartoszkrych/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/bartoszkrych/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/bartoszkrych/DialogController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/bartoszkrych/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/bartoszkrych/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/bartoszkrych/meals.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/bartoszkrych/clientView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/bartoszkrych/newMealDialog.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/bartoszkrych/sample.fxml" beforeDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -59,44 +66,46 @@
     <session id="-1805846953">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="24" />
+          <entry key="project.closed" value="26" />
           <entry key="project.open.time.0" value="4" />
           <entry key="project.open.time.1" value="9" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.12" value="3" />
           <entry key="project.open.time.14" value="1" />
+          <entry key="project.open.time.18" value="1" />
+          <entry key="project.open.time.19" value="1" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.8" value="1" />
           <entry key="project.open.time.9" value="3" />
-          <entry key="project.opened" value="25" />
+          <entry key="project.opened" value="27" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="fxml" value="10" />
-          <entry key="java" value="40" />
+          <entry key="fxml" value="14" />
+          <entry key="java" value="44" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="40" />
-          <entry key="XML" value="10" />
+          <entry key="JAVA" value="44" />
+          <entry key="XML" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="fxml" value="452" />
-          <entry key="java" value="4281" />
-          <entry key="txt" value="282" />
+          <entry key="fxml" value="496" />
+          <entry key="java" value="5566" />
+          <entry key="txt" value="305" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="4281" />
-          <entry key="PLAIN_TEXT" value="282" />
-          <entry key="XML" value="452" />
+          <entry key="JAVA" value="5566" />
+          <entry key="PLAIN_TEXT" value="305" />
+          <entry key="XML" value="496" />
         </counts>
       </usages-collector>
     </session>
@@ -107,48 +116,69 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/bartoszkrych/sample.fxml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="799">
-              <caret line="47" column="57" selection-start-line="47" selection-start-column="57" selection-end-line="47" selection-end-column="57" />
+        <entry file="file://$PROJECT_DIR$/src/com/bartoszkrych/creatingView.fxml">
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="13" column="25" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
             </state>
           </provider>
-          <provider editor-type-id="JavaFX-Scene-Builder" />
+          <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/bartoszkrych/Main.java">
+        <entry file="file://$PROJECT_DIR$/src/com/bartoszkrych/clientView.fxml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="21" column="28" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="28" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="306">
+              <caret line="18" column="58" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="59" />
             </state>
           </provider>
+          <provider editor-type-id="JavaFX-Scene-Builder" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/bartoszkrych/Controller.java">
+        <entry file="file://$PROJECT_DIR$/src/com/bartoszkrych/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="534">
-              <caret line="230" column="2" selection-start-line="230" selection-start-column="2" selection-end-line="230" selection-end-column="2" />
+            <state relative-caret-position="389">
+              <caret line="31" column="60" selection-start-line="31" selection-start-column="60" selection-end-line="31" selection-end-column="60" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#addMealClick#0;class#Controller#0" />
+                <element signature="method#showClientView#0;class#Main#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/bartoszkrych/meals.fxml">
+        <entry file="file://$PROJECT_DIR$/src/com/bartoszkrych/firstController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="24" column="81" selection-start-line="24" selection-start-column="81" selection-end-line="24" selection-end-column="81" />
+            <state relative-caret-position="466">
+              <caret line="76" column="40" lean-forward="true" selection-start-line="76" selection-start-column="40" selection-end-line="76" selection-end-column="40" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
-          <provider editor-type-id="JavaFX-Scene-Builder" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/bartoszkrych/Controller.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="551">
+              <caret line="162" column="40" selection-start-line="162" selection-start-column="40" selection-end-line="162" selection-end-column="40" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="class#2363:2671" />
+                <element signature="class#2715:3040" />
+                <element signature="class#3082:3397" />
+                <element signature="class#3443:3762" />
+                <element signature="class#3805:4121" />
+                <element signature="method#addMealClick#0;class#Controller#0" />
+                <element signature="method#updata#0;class#Controller#0" />
+                <element signature="method#setClient#0;class#Controller#0" />
+                <element signature="method#deleteMealClick#0;class#Controller#0" />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -183,7 +213,6 @@
         <option value="$PROJECT_DIR$/src/com/bartoszkrych/observers/ObsOpinion.java" />
         <option value="$PROJECT_DIR$/src/com/bartoszkrych/classes/Man.java" />
         <option value="$PROJECT_DIR$/src/com/bartoszkrych/classes/Woman.java" />
-        <option value="$PROJECT_DIR$/src/com/bartoszkrych/sample.fxml" />
         <option value="$PROJECT_DIR$/src/com/bartoszkrych/fxml/newMealDialog.fxml" />
         <option value="$PROJECT_DIR$/src/com/bartoszkrych/fxml/meals.fxml" />
         <option value="$PROJECT_DIR$/src/com/bartoszkrych/fxml/sample.fxml" />
@@ -193,9 +222,12 @@
         <option value="$PROJECT_DIR$/src/com/bartoszkrych/classes/MealProperty.java" />
         <option value="$PROJECT_DIR$/src/com/bartoszkrych/observers/ObsPercent.java" />
         <option value="$PROJECT_DIR$/src/com/bartoszkrych/classes/Meal.java" />
-        <option value="$PROJECT_DIR$/src/com/bartoszkrych/Main.java" />
         <option value="$PROJECT_DIR$/src/com/bartoszkrych/meals.fxml" />
+        <option value="$PROJECT_DIR$/src/com/bartoszkrych/firstController.java" />
+        <option value="$PROJECT_DIR$/src/com/bartoszkrych/sample.fxml" />
         <option value="$PROJECT_DIR$/src/com/bartoszkrych/Controller.java" />
+        <option value="$PROJECT_DIR$/src/com/bartoszkrych/creatingView.fxml" />
+        <option value="$PROJECT_DIR$/src/com/bartoszkrych/Main.java" />
       </list>
     </option>
   </component>
@@ -221,9 +253,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -260,6 +289,9 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -272,9 +304,9 @@
     <property name="OverrideImplement.combined" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544791547016" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544891770556" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Drink-Builder" />
     <property name="recentsLimit" value="5" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
@@ -427,7 +459,9 @@
       <workItem from="1544730884415" duration="685000" />
       <workItem from="1544731585909" duration="12167000" />
       <workItem from="1544788759469" duration="2516000" />
-      <workItem from="1544791608342" duration="272000" />
+      <workItem from="1544791608342" duration="3671000" />
+      <workItem from="1544808484300" duration="789000" />
+      <workItem from="1544885801768" duration="5957000" />
     </task>
     <task id="LOCAL-00001" summary="interfaces">
       <created>1544275291491</created>
@@ -513,11 +547,18 @@
       <option name="project" value="LOCAL" />
       <updated>1544790635767</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="validation for new meal">
+      <created>1544791975930</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1544791975930</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37924000" />
+    <option name="totallyTimeSpent" value="48069000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -532,7 +573,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.10927505" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.11140725" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" weight="0.32995737" />
       <window_info id="Designer" order="3" />
@@ -540,9 +581,9 @@
       <window_info id="UI Designer" order="5" />
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.33188722" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.329718" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.25813448" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3991323" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.329718" />
@@ -566,41 +607,6 @@
       <window_info anchor="right" id="Palette&#9;" order="8" />
       <window_info anchor="right" id="Theme Preview" order="9" />
     </layout>
-    <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.13219616" />
-      <window_info id="Structure" order="1" weight="0.25" />
-      <window_info id="Favorites" order="2" weight="0.32995737" />
-      <window_info id="Designer" order="3" />
-      <window_info id="Image Layers" order="4" />
-      <window_info id="UI Designer" order="5" />
-      <window_info id="Capture Tool" order="6" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.33188722" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.329718" />
-      <window_info anchor="bottom" id="Application Servers" order="7" />
-      <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Problems" order="9" />
-      <window_info anchor="bottom" id="Changes" order="10" />
-      <window_info anchor="bottom" id="Profiler" order="11" />
-      <window_info anchor="bottom" id="Event Log" order="12" />
-      <window_info anchor="bottom" id="Messages" order="13" weight="0.329718" />
-      <window_info anchor="bottom" id="Database Changes" order="14" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="15" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="JetGradle" order="3" />
-      <window_info anchor="right" id="Database" order="4" />
-      <window_info anchor="right" id="Palette" order="5" />
-      <window_info anchor="right" id="Maven Projects" order="6" />
-      <window_info anchor="right" id="Capture Analysis" order="7" />
-      <window_info anchor="right" id="Palette&#9;" order="8" />
-      <window_info anchor="right" id="Theme Preview" order="9" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -623,7 +629,8 @@
     <MESSAGE value="labels with text from Human and obs" />
     <MESSAGE value="TableView, data, adding new meals" />
     <MESSAGE value="new meals window" />
-    <option name="LAST_COMMIT_MESSAGE" value="new meals window" />
+    <MESSAGE value="validation for new meal" />
+    <option name="LAST_COMMIT_MESSAGE" value="validation for new meal" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -702,14 +709,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bartoszkrych/newMealDialog.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/bartoszkrych/classes/Meal.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -730,46 +729,67 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bartoszkrych/DialogController.java">
+    <entry file="file://$PROJECT_DIR$/src/com/bartoszkrych/newMealDialog.fxml" />
+    <entry file="file://$PROJECT_DIR$/src/com/bartoszkrych/DialogController.java" />
+    <entry file="jar://D:/Program Files/java/jdk1.8.0_161/javafx-src.zip!/javafx/fxml/FXMLLoader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="27" column="5" lean-forward="true" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
+        <state relative-caret-position="576">
+          <caret line="3096" selection-start-line="3096" selection-end-line="3096" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bartoszkrych/sample.fxml">
+    <entry file="file://$PROJECT_DIR$/src/com/bartoszkrych/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="799">
-          <caret line="47" column="57" selection-start-line="47" selection-start-column="57" selection-end-line="47" selection-end-column="57" />
+        <state relative-caret-position="551">
+          <caret line="162" column="40" selection-start-line="162" selection-start-column="40" selection-end-line="162" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="class#2363:2671" />
+            <element signature="class#2715:3040" />
+            <element signature="class#3082:3397" />
+            <element signature="class#3443:3762" />
+            <element signature="class#3805:4121" />
+            <element signature="method#addMealClick#0;class#Controller#0" />
+            <element signature="method#updata#0;class#Controller#0" />
+            <element signature="method#setClient#0;class#Controller#0" />
+            <element signature="method#deleteMealClick#0;class#Controller#0" />
+          </folding>
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bartoszkrych/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/com/bartoszkrych/firstController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="21" column="28" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="28" />
+        <state relative-caret-position="466">
+          <caret line="76" column="40" lean-forward="true" selection-start-line="76" selection-start-column="40" selection-end-line="76" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bartoszkrych/meals.fxml">
+    <entry file="file://$PROJECT_DIR$/src/com/bartoszkrych/clientView.fxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="81" selection-start-line="24" selection-start-column="81" selection-end-line="24" selection-end-column="81" />
+        <state relative-caret-position="306">
+          <caret line="18" column="58" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="59" />
         </state>
       </provider>
       <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bartoszkrych/Controller.java">
+    <entry file="file://$PROJECT_DIR$/src/com/bartoszkrych/creatingView.fxml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="25" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/bartoszkrych/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="534">
-          <caret line="230" column="2" selection-start-line="230" selection-start-column="2" selection-end-line="230" selection-end-column="2" />
+        <state relative-caret-position="389">
+          <caret line="31" column="60" selection-start-line="31" selection-start-column="60" selection-end-line="31" selection-end-column="60" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#addMealClick#0;class#Controller#0" />
+            <element signature="method#showClientView#0;class#Main#0" />
           </folding>
         </state>
       </provider>
