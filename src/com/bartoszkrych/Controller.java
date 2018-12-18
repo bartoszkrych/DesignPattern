@@ -18,7 +18,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.text.DateFormat;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -119,6 +118,7 @@ public class Controller {
 
         client.vAddObserver(obsOpinion);
         client.vAddObserver(obsPercent);
+        client.vNotifyObserver();
 
         yourName.setText(client.sGetName());
         yourWeight.setText(""+client.dGetWeight());
@@ -199,6 +199,8 @@ public class Controller {
 
     public void exitButtonClick() {
 
+        client.vRemoveObserver(obsPercent);
+        client.vRemoveObserver(obsOpinion);
         try {
             DateFormat dateFormat = new SimpleDateFormat("yyyyMMdd");
             Date date = new Date();

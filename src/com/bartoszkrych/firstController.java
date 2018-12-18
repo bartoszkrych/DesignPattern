@@ -43,71 +43,79 @@ public class firstController {
         int i_age = 0;
         int i_height = 0;
         double d_weight = 0;
+        Human client;
 
-        boolean valid = true;
 
+        boolean isFile = false;
         try {
-            d_weight = Double.parseDouble(setWeight.getText().trim());
-            setWeight.setStyle(null);
-        } catch (NumberFormatException ex) {
-            valid = false;
-            setWeight.setStyle("-fx-control-inner-background: rgba(229,0,0,0.4);");
-        }
+            DateFormat dateFormat = new SimpleDateFormat("yyyyMMdd");
+            Date date = new Date();
 
-        try {
-            i_age = Integer.parseInt(setAge.getText().trim());
-            setAge.setStyle(null);
-        } catch (NumberFormatException ex) {
-            valid = false;
-            setAge.setStyle("-fx-control-inner-background: rgba(229,0,0,0.4);");
-        }
+            File f_file = new File(s_name + dateFormat.format(date) + ".ser");
 
-        try {
-            i_height = Integer.parseInt(setHeight.getText().trim());
-            setHeight.setStyle(null);
-        } catch (NumberFormatException ex) {
-            valid = false;
-            setHeight.setStyle("-fx-control-inner-background: rgba(229,0,0,0.4);");
-        }
+            if (f_file.exists() && f_file.length() != 0) {
+                FileInputStream fis = new FileInputStream(f_file);
+                ObjectInputStream ois = new ObjectInputStream(fis);
 
-        if (valid) {
-            Human client = new Man("def",18,180,80);
-
-            boolean isFile=false;
-            try {
-
-                DateFormat dateFormat = new SimpleDateFormat("yyyyMMdd");
-                Date date = new Date();
-
-                File filee= new File(s_name+dateFormat.format(date)+".ser");
-
-                if(filee.length()!=0){
-                    FileInputStream fis = new FileInputStream(filee);
-                    ObjectInputStream ois = new ObjectInputStream(fis);
-
-                    client = (Human) ois.readObject();
-                    ois.close();
-                    fis.close();
-
-                    isFile=true;
-                }
-
-            } catch (IOException ioe) {
-                ioe.printStackTrace();
-                return;
-            } catch (ClassNotFoundException e) {
-                e.printStackTrace();
+                client = (Human) ois.readObject();
+                ois.close();
+                fis.close();
+                isFile = true;
+                Main.showClientView(client);
             }
-            if(!isFile){
+
+        } catch (IOException ioe) {
+            ioe.printStackTrace();
+            return;
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        if (!isFile) {
+
+            boolean valid = true;
+            if(s_name.equals("")){
+                valid=false;
+                setName.setStyle("-fx-control-inner-background: rgba(229,0,0,0.4);");
+            }else{
+                setName.setStyle(null);
+            }
+            try {
+                d_weight = Double.parseDouble(setWeight.getText().trim());
+                setWeight.setStyle(null);
+            } catch (NumberFormatException ex) {
+                valid = false;
+                setWeight.setStyle("-fx-control-inner-background: rgba(229,0,0,0.4);");
+            }
+
+            try {
+                i_age = Integer.parseInt(setAge.getText().trim());
+                setAge.setStyle(null);
+            } catch (NumberFormatException ex) {
+                valid = false;
+                setAge.setStyle("-fx-control-inner-background: rgba(229,0,0,0.4);");
+            }
+
+            try {
+                i_height = Integer.parseInt(setHeight.getText().trim());
+                setHeight.setStyle(null);
+            } catch (NumberFormatException ex) {
+                valid = false;
+                setHeight.setStyle("-fx-control-inner-background: rgba(229,0,0,0.4);");
+            }
+
+
+            if (valid) {
                 if (sexMan.isSelected()) {
                     client = new Man(s_name, i_age, i_height, d_weight);
                 } else {
                     client = new Woman(s_name, i_age, i_height, d_weight);
                 }
+                Main.showClientView(client);
             }
-
-            Main.showClientView(client);
         }
+
+
     }
 
     public void exitButtonClick() {

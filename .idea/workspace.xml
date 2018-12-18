@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Diet control 1.1v">
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="working serializable, name+date">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/bartoszkrych/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/bartoszkrych/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/bartoszkrych/classes/Human.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/bartoszkrych/classes/Human.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/bartoszkrych/classes/Meal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/bartoszkrych/classes/Meal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/bartoszkrych/creatingView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/bartoszkrych/creatingView.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/bartoszkrych/firstController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/bartoszkrych/firstController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/bartoszkrych/interfaces/Observer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/bartoszkrych/interfaces/Observer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/bartoszkrych/interfaces/Subject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/bartoszkrych/interfaces/Subject.java" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -86,26 +81,26 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="fxml" value="21" />
-          <entry key="java" value="73" />
+          <entry key="java" value="74" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="73" />
+          <entry key="JAVA" value="74" />
           <entry key="XML" value="21" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="fxml" value="539" />
-          <entry key="java" value="6968" />
-          <entry key="txt" value="395" />
+          <entry key="java" value="7115" />
+          <entry key="txt" value="440" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="6968" />
-          <entry key="PLAIN_TEXT" value="395" />
+          <entry key="JAVA" value="7115" />
+          <entry key="PLAIN_TEXT" value="440" />
           <entry key="XML" value="539" />
         </counts>
       </usages-collector>
@@ -116,11 +111,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/bartoszkrych/firstController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="370">
-              <caret line="92" column="17" lean-forward="true" selection-start-line="92" selection-start-column="17" selection-end-line="92" selection-end-column="17" />
+            <state relative-caret-position="256">
+              <caret line="112" column="17" lean-forward="true" selection-start-line="112" selection-start-column="17" selection-end-line="112" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -129,34 +124,26 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="jar://D:/Program Files/java/jdk1.8.0_161/src.zip!/java/io/ObjectInputStream.java">
+        <entry file="file://$PROJECT_DIR$/src/com/bartoszkrych/observers/ObsOpinion.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="52100">
-              <caret line="2670" selection-start-line="2670" selection-end-line="2670" />
+            <state relative-caret-position="360">
+              <caret line="23" column="34" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="34" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/bartoszkrych/interfaces/Subject.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="7" column="46" selection-start-line="7" selection-start-column="46" selection-end-line="7" selection-end-column="46" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/bartoszkrych/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1820">
-              <caret line="203" column="35" selection-start-line="203" selection-start-column="35" selection-end-line="205" selection-end-column="91" />
+            <state relative-caret-position="176">
+              <caret line="73" lean-forward="true" selection-start-line="73" selection-end-line="73" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#initialize#0;class#Controller#0" />
                 <element signature="method#setClient#0;class#Controller#0" />
                 <element signature="method#addMealClick#0;class#Controller#0" />
                 <element signature="method#deleteMealClick#0;class#Controller#0" />
+                <element signature="method#exitButtonClick#0;class#Controller#0" />
                 <element signature="method#updata#0;class#Controller#0" />
                 <element signature="method#updataComboBox#0;class#Controller#0" />
               </folding>
@@ -218,8 +205,8 @@
         <option value="$PROJECT_DIR$/src/com/bartoszkrych/interfaces/Subject.java" />
         <option value="$PROJECT_DIR$/src/com/bartoszkrych/classes/Human.java" />
         <option value="$PROJECT_DIR$/src/com/bartoszkrych/interfaces/Observer.java" />
-        <option value="$PROJECT_DIR$/src/com/bartoszkrych/Controller.java" />
         <option value="$PROJECT_DIR$/src/com/bartoszkrych/firstController.java" />
+        <option value="$PROJECT_DIR$/src/com/bartoszkrych/Controller.java" />
       </list>
     </option>
   </component>
@@ -343,7 +330,7 @@
     <property name="OverrideImplement.combined" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545165825784" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545167369865" />
     <property name="dynamic.classpath" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="recentsLimit" value="5" />
@@ -511,7 +498,7 @@
       <workItem from="1545136665907" duration="1090000" />
       <workItem from="1545137794301" duration="1272000" />
       <workItem from="1545154538662" duration="547000" />
-      <workItem from="1545163879289" duration="734000" />
+      <workItem from="1545163879289" duration="2318000" />
     </task>
     <task id="LOCAL-00001" summary="interfaces">
       <created>1544275291491</created>
@@ -639,11 +626,18 @@
       <option name="project" value="LOCAL" />
       <updated>1544901144737</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="working serializable, name+date">
+      <created>1545165948255</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1545165948255</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="63973000" />
+    <option name="totallyTimeSpent" value="65557000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -755,7 +749,8 @@
     <MESSAGE value="0.9v" />
     <MESSAGE value="Diet control 1.0v" />
     <MESSAGE value="Diet control 1.1v" />
-    <option name="LAST_COMMIT_MESSAGE" value="Diet control 1.1v" />
+    <MESSAGE value="working serializable, name+date" />
+    <option name="LAST_COMMIT_MESSAGE" value="working serializable, name+date" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -805,13 +800,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="17" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bartoszkrych/observers/ObsOpinion.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="23" column="34" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="34" />
         </state>
       </provider>
     </entry>
@@ -898,23 +886,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bartoszkrych/firstController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="92" column="17" lean-forward="true" selection-start-line="92" selection-start-column="17" selection-end-line="92" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/Program Files/java/jdk1.8.0_161/src.zip!/java/io/ObjectInputStream.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52100">
-          <caret line="2670" selection-start-line="2670" selection-end-line="2670" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/bartoszkrych/interfaces/Subject.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
@@ -922,16 +893,45 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://D:/Program Files/java/jdk1.8.0_161/src.zip!/java/io/ObjectInputStream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="2665" column="70" selection-start-line="2665" selection-start-column="70" selection-end-line="2665" selection-end-column="70" />
+          <folding>
+            <element signature="e#105128#105745#0" />
+            <element signature="e#105755#106075#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/bartoszkrych/firstController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="112" column="17" lean-forward="true" selection-start-line="112" selection-start-column="17" selection-end-line="112" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/bartoszkrych/observers/ObsOpinion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="23" column="34" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/bartoszkrych/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1820">
-          <caret line="203" column="35" selection-start-line="203" selection-start-column="35" selection-end-line="205" selection-end-column="91" />
+        <state relative-caret-position="176">
+          <caret line="73" lean-forward="true" selection-start-line="73" selection-end-line="73" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#initialize#0;class#Controller#0" />
             <element signature="method#setClient#0;class#Controller#0" />
             <element signature="method#addMealClick#0;class#Controller#0" />
             <element signature="method#deleteMealClick#0;class#Controller#0" />
+            <element signature="method#exitButtonClick#0;class#Controller#0" />
             <element signature="method#updata#0;class#Controller#0" />
             <element signature="method#updataComboBox#0;class#Controller#0" />
           </folding>
