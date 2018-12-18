@@ -14,6 +14,14 @@ import javafx.scene.control.*;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class Controller {
 
     private Human client;
@@ -190,8 +198,23 @@ public class Controller {
     }
 
     public void exitButtonClick() {
-        Stage stage = (Stage) yourName.getScene().getWindow();
-        stage.close();
+
+        try {
+            DateFormat dateFormat = new SimpleDateFormat("yyyyMMdd");
+            Date date = new Date();
+            FileOutputStream fileOut =
+                    new FileOutputStream(client.sGetName()+dateFormat.format(date)+".ser");
+            ObjectOutputStream out = new ObjectOutputStream(fileOut);
+            out.writeObject(client);
+            out.close();
+            fileOut.close();
+
+            Stage stage = (Stage) yourName.getScene().getWindow();
+            stage.close();
+        } catch (IOException i) {
+            i.printStackTrace();
+        }
+
     }
 
     private void updata(){

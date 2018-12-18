@@ -1,6 +1,8 @@
 package com.bartoszkrych.classes;
 
-public class Meal
+import java.io.Serializable;
+
+public class Meal implements Serializable
 {
     private double d_protein;
     private double d_carbohydrates;

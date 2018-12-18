@@ -3,6 +3,7 @@ package com.bartoszkrych.classes;
 import com.bartoszkrych.interfaces.Observer;
 import com.bartoszkrych.interfaces.Subject;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 

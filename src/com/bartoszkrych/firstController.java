@@ -10,7 +10,11 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 import javafx.stage.Stage;
 
-import java.io.IOException;
+import java.io.*;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
 
 public class firstController {
 
@@ -66,13 +70,42 @@ public class firstController {
             setHeight.setStyle("-fx-control-inner-background: rgba(229,0,0,0.4);");
         }
 
-        if(valid){
-            Human client;
-            if(sexMan.isSelected()){
-                client = new Man (s_name,i_age,i_height,d_weight);
-            }else{
-                client = new Woman(s_name,i_age,i_height,d_weight);
+        if (valid) {
+            Human client = new Man("def",18,180,80);
+
+            boolean isFile=false;
+            try {
+
+                DateFormat dateFormat = new SimpleDateFormat("yyyyMMdd");
+                Date date = new Date();
+
+                File filee= new File(s_name+dateFormat.format(date)+".ser");
+
+                if(filee.length()!=0){
+                    FileInputStream fis = new FileInputStream(filee);
+                    ObjectInputStream ois = new ObjectInputStream(fis);
+
+                    client = (Human) ois.readObject();
+                    ois.close();
+                    fis.close();
+
+                    isFile=true;
+                }
+
+            } catch (IOException ioe) {
+                ioe.printStackTrace();
+                return;
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
             }
+            if(!isFile){
+                if (sexMan.isSelected()) {
+                    client = new Man(s_name, i_age, i_height, d_weight);
+                } else {
+                    client = new Woman(s_name, i_age, i_height, d_weight);
+                }
+            }
+
             Main.showClientView(client);
         }
     }
